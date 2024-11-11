@@ -20,7 +20,10 @@ function worksProcess(event) {
   let distance = getDistance(event.offsetX, event.offsetY);
 
   if (distance < 8) {
-    alert("Клад найден! Сделано кликов: " + settingsGame.clicks);
+    alert("Клад найден! Сделано кликов: " + settingsGame.clicks + " и мы перепрятали клад.");
+    settingsGame.clicks = 0;
+    target.x = target.x = getRandomNumber(settingsGame.width);
+    target.y = target.x = getRandomNumber(settingsGame.width);
   }
   if (distance < 10) {
     settingsGame.info.innerHTML = "Обожжешься!";
@@ -38,7 +41,7 @@ function worksProcess(event) {
     settingsGame.info.innerHTML = "Замерзнешь!";
   }
 
-  console.log("click", event.offsetX, event.offsetY, distance);
+  console.log("координаты", target, "click", event.offsetX, event.offsetY, distance);
 }
 
 function getDistance(x, y) {
