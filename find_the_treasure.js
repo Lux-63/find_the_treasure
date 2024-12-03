@@ -49,7 +49,3 @@ function getDistance(x, y) {
   let diffY = y - target.y;
   return Math.sqrt(diffX * diffX + diffY * diffY);
 }
-
-/*
-что нужно сделать
-*/
